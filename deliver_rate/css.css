@@ -1,0 +1,29 @@
+.logo-head{
+    position: static;
+    margin-top: -8px;
+    margin-left: -8px;
+    height: 152px;
+    width: 1366px;
+}
+.menu-head{
+    position: static;
+    margin-top: -8px;
+    margin-left: -8px;
+    height: 52px;
+    width: 1366px;
+}
+
+body{
+    background-image: url('../image/bg.jpg');
+
+}
+.menuleft
+a:visited{
+    color:red;
+}
+a:hover{
+    color:blue;
+}
+a:active{
+    color:yellow;
+}
