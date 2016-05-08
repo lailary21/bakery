@@ -1,5 +1,5 @@
 <?php
-
+session_start();
 include './connect.php';
 $user_owner = $_POST['user_owner'];
 $passwd_owner = $_POST['passwd_owner'];
@@ -13,10 +13,11 @@ if (mysqli_num_rows($result) > 0) {
 		$_SESSION["id_owner"] = $row['id_owner'];
                 $_SESSION["user_owner"] = $row['user_owner'];
                 //echo $_SESSION["user_owner"];
-		header("location:../main/main_own.php");
+		header("location:../main/maincenter.php");
    
 } else {
-	 echo "Username หรือ Password ผิด";
+           echo "<script>alert('Username หรือ Password ผิด');history.back();</script>";
+           return;
    
 }
 ?>

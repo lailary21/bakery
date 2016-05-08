@@ -1,7 +1,6 @@
 <?php
 
 require_once("connect.php"); //เรียกใช้ไฟล์การเชื่อมต่อ DATABASE SERVER และฐานข้อมูล
-
 //debugArray($_POST);
 
 date_default_timezone_set('Asia/Bangkok');
@@ -16,5 +15,6 @@ date_default_timezone_set('Asia/Bangkok');
 $sql = "INSERT INTO `comment` (`id_order`, `orderno`, `id_bakery`, `id_sp`, `id_type`, `datetime_com`, `com_text`) VALUES ({$_POST['id_order']}, {$_POST['orderno']}, {$_POST['id_bakery']}, {$_POST['id_sp']}, {$_POST['id_type']}, now(), '{$_POST['com_text']}');";
 $conn->query($sql) or die($sql);
 
-header('Location: comment.php');
+echo "<script>alert('บันทึกสำเร็จ')</script>";
+echo "<meta http-equiv ='refresh'content='0;URL=show_comment.php'>";
 exit();

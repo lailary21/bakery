@@ -1,5 +1,5 @@
 <?php
-
+session_start();
 include './connect.php';
 $user_mem = $_POST['user_mem'];
 $passwd_mem = $_POST['passwd_mem'];
@@ -12,10 +12,11 @@ if (mysqli_num_rows($result) > 0) {
 		$_SESSION["id_mem"] = $row['id_mem'];
                 $_SESSION["user_mem"] = $row['user_mem'];
                 //echo $_SESSION["id_mem"];
-		header("location:../main/main_mem.php");
+		header("location:../main/maincenter.php");
    
 } else {
-	 echo "Username หรือ Password ผิด";
+	 echo "<script>alert('Username หรือ Password ผิด');history.back();</script>";
+           return;
    
 }
 ?>

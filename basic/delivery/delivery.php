@@ -9,15 +9,24 @@
     <script>
         function OnlyNum() {
             if ((event.keyCode < 48 || event.keyCode > 57)) {
-                alert('ใส่ตัวเลขได้เท่านั้น'); 
+                alert('ใส่ตัวเลขได้เท่านั้น');
                 event.returnValue = false;
+            }
+        }
+        function checkInp()
+        {
+            var checked = $("#delivery input:checked").length > 0;
+            
+            if (!$('#delivery input[type="radio"]').is(':checked')) {
+                alert("กรุณาเลือกวันทำงานอย่างน้อย 1 วัน");
+                return false;
             }
         }
     </script>
     <style></style>
     <body>      
         <img class="logo-head" src="image/1.jpg"> 
-        <form action="insert.php" method="post">
+        <form action="insert.php" method="post" name="delivery">
             <table class="menu-head">     
                 <tr align="center" valign="middle" bgcolor="#CCFFCC">
                     <td width="120" align="center">หน้าแรก</td>
@@ -37,7 +46,11 @@
                             </tr>
                             <tr>
                                 <td align="right">ชื่อ :</td>
-                                <td><input type="text" id="name_rate" name="name_rate" maxlength="20" onKeyUp="if(!(isNaN(this.value))) { alert('กรุณากรอกอักษร'); this.value='';}"/><a style="color: red">&nbsp;*</a></td>
+                                <td><input type="text" id="name_rate" name="name_rate" maxlength="20" onkeypress="if (!(event.keyCode < 48 || event.keyCode > 122)) {
+                                            alert('กรุณากรอกภาษาไทยเท่านั้น');
+                                            event.returnValue = false
+                                        }
+                                        ;"/><a style="color: red">&nbsp;*</a></td>
                             </tr>
                             <tr>
                                 <td align="right">ราคา :</td>
@@ -45,12 +58,12 @@
                             </tr>
                             <tr>
                                 <td align="right">สถานะ :</td>
-                                <td><input type="radio" id="enable" name="status_rate"  value="1" /> ใช้งาน
+                                <td><input type="radio" id="enable" name="status_rate"  value="1" checked /> ใช้งาน
                                     <input type="radio" id="disable" name="status_rate"  value="2"/> ไม่ใช้งาน <a style="color: red">*</a></td>
                             </tr>
                             <tr>
                                 <td align="right"></td>
-                                    <td><input type="submit" id="bt1" class="btn-submit" name="submit"  value="เพิ่ม"> 
+                                <td><input type="submit" id="bt1" class="btn-submit" name="submit"  value="เพิ่ม"> 
                                     <input type="reset" id="bt2" class="btn-reset" name="reset" value="ยกเลิก"></td>
                             </tr>
                         </table><br>
@@ -64,8 +77,7 @@
                             <?php
                             include 'connect.php';
                             $sql = "select * from deliver_rate";
-                            $query = mysqli_query($conn,
-                                    $sql) or die($sql);
+                            $query = mysqli_query($conn, $sql) or die($sql);
                             while ($proResult = mysqli_fetch_array($query)) {
                                 echo "<tr>";
                                 echo "<td align='center'>" . $proResult['id_rate'] . "</td>";

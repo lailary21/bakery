@@ -69,20 +69,15 @@
                     <td><a><span onclick="window.location = '../bk_owner/owner_form.php';" >เปลี่ยนสถานะ</span></a></td>
                 </tr>
                 <tr align="center" bgcolor="#FFFFCC">
-                    <td><a><span onclick="window.location = '../bk_owner/owner_form.php';" >ออกรายงาน</span></a></td>                        
-                </tr></div>
+                    <td><a><span onclick="window.location = '../bk_owner/owner_form.php';" >ออกรายงาน</span></a></td>                      </tr></div>
         </table>
-
         <table width="700" bgcolor="#FFFFFF" align="center"  
             <tr>
                 <td width="300" align="center" > 
                     <h1>เบเกอรี่</h1>
-
                     <form action="add_bk.php" method="post" enctype = "multipart/form-data">
-
                         ชื่อเบเกอรี่ : 
                         <input type="text" id="name_bakery" name="name_bakery"> <br> 
-
                         กลุ่มเบเกอรี่ :
                         <?php
                         include("../condb/conndb.php");
@@ -98,9 +93,7 @@
                                 <option value='<?php echo $gpResult['id_group']; ?>'>
                                     <?php echo $gpResult['name_group']; ?></option>
                             <?php } ?> 
-
                         </select> 
-
                         <br>
                         ชนิดเบเกอรี่ :
                         <?php
@@ -118,11 +111,7 @@
                                     <?php echo $typeResult['name_type']; ?></option>
                             <?php } ?> 
                         </select> 
-
-
-
                         <br>
-
                         ขนาด : 
                         <?php
                         include("../condb/conndb.php");
@@ -138,25 +127,18 @@
                                 <option value='<?php echo $spsResult['id_sp']; ?>'>
                                     <?php echo $spsResult['name_sp']; ?></option>
                             <?php } ?> 
-
                         </select> 
-
                         <br> 
-
                         รูปภาพ :
                         <input type = "file" name = "fileToUpload" id = "fileToUpload" >
-
                         <br>
-
                         สถานะ :
                         <input type="radio" id="radio1" name="status_bakery"  value="1"> ใช้งาน
                         <input type="radio" id="radio2" name="status_bakery"  value="2"> ไม่ใช้งาน <br>
-
                         <br>
                         <input type='submit' id="bt1" class="btn-submit" name='submit' value='เพิ่ม' onClick="alert('ยืนยันการบันทึก')"> 
                         <input type="reset" id="bt2" class="btn-submit" name="submit" value="ยกเลิก"> 
                         <br><br><br>
-
                         <table width="900" border="1" align="center">
                             <tr>
                                 <th width="91"><div align="center">รูปภาพ</th>

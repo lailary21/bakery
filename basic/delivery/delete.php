@@ -14,6 +14,7 @@ if ($row['status_rate'] == 2) {
     <head>
         <title>ข้อมูลอัตราค่าจัดส่ง</title>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <link rel="stylesheet" href="css.css">
     </head>
     <script src="jquery-1.12.0.min.js" type="text/javascript"></script>
     <script>
@@ -48,11 +49,11 @@ if ($row['status_rate'] == 2) {
             width: 1366px;
         }
         body{
-            background-image: url(bg.jpg);
+            background-image: url(image/bg.jpg);
         }
     </style>
     <body>      
-        <img class="logo-head" src="1.jpg"> 
+        <img class="logo-head" src="image/1.jpg"> 
         <table width="450" border="1" align="center" bgcolor="#FFFFF">
             <tr>
                 <th width="79" align="center">รหัส</th>
@@ -62,10 +63,10 @@ if ($row['status_rate'] == 2) {
             </tr> 
             <?php
             include 'connect.php';
-            $sql = "select * from deliver_rate";
+            $sql = "select * from deliver_rate where id_rate and name_rate='$name_rate'";
             $query = mysqli_query($conn,
                     $sql) or die($sql);
-            while ($proResult = mysqli_fetch_array($query)) {
+            while ($proResult = mysqli_fetch_array($query)){
                 echo "<tr>";
                 echo "<td align='center'>" . $proResult['id_rate'] . "</td>";
                 echo "<td align='center'>" . $proResult['name_rate'] . "</td>";

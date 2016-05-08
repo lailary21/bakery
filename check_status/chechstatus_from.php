@@ -4,7 +4,7 @@
 //?>
 <html>
     <head>
-        <title>จัดทำโปรโมชั่น</title>
+        <title>ตรวจสอบสถานะ</title>
 
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <link rel="stylesheet" href="css.css">
@@ -90,7 +90,7 @@
                                 <td colspan="3" align="center"><h3>เช็คสถานะ</h3></td>
                             </tr>
                             <tr>
-                                <td width="110" align="right">เลขที่ใบสั่งซื้อ :</td>
+                                <td width="110" align="right">เลขที่ใบขาย :</td>
                                 <td colspan="2">
                                     <input type="text" id="orderno" name="orderno" maxlength="9" onkeypress="OnlyNum()"></td>
                             </tr>

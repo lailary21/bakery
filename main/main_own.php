@@ -1,15 +1,15 @@
 <?php
-    
-    include '../register/connect.php';
+        session_start();
+   include("../condb/conndb.php");
     
     if(isset($_SESSION["id_owner"])){
         $name = $_SESSION["user_owner"];
         
     }else{
-        $name = "guest";
-        //$name = $_SESSION["user_owner"];
+        echo "<script>alert('กรุณาทำการเข้าสู่ระบบ!!')</script>";
+           header("Refresh:0;url=../regidter/login_own.php");
+           return;
     }
-    
 ?>
 
 
@@ -57,50 +57,50 @@
                             <td width="230" bgcolor="#FFFFCC">
                                 <table width="200" border="0" align="center" bgcolor="#F26B5E">    <!--ตารางแถบซ้ายมือ!-->
                                     <tr align="center" bgcolor="#F26B5E">
-                                        <td height="35">จัดการข้อมูลต่างๆ</td>
-                                    </tr>
-                                    <tr align="center" bgcolor="#FFFFCC">
-                                        <td bgcolor="#FFCC99"><a href="../owner/own_data.php">ข้อมูลเจ้าของร้าน</a></td>
-                                    </tr>
-                                    <tr align="center" bgcolor="#FFFFCC">
-                                        <td><a href="../member/mem_data.php">ข้อมูลสมาชิก</a></td>
-                                    </tr>
-                                    <tr align="center" bgcolor="#FFCC99">
-                                        <td bgcolor="#FFCC99">ข้อมูลกลุ่มเบเกอรี่</td>
-                                    </tr>
-                                    <tr align="center" bgcolor="#FFFFCC">
-                                        <td>ข้อมูลชนิดเบเกอรี่</td>
-                                    </tr>
-                                    <tr align="center" bgcolor="#FFCC99">
-                                        <td>ข้อมูลขนาดและราคา</td>
-                                    </tr>
-                                    <tr align="center" bgcolor="#FFFFCC">
-                                        <td>Admin</td>
-                                    </tr>
-                                    <tr align="center" bgcolor="#FFCC99">
-                                        <td><a href="../bank/bank.php">ข้อมูลธนาคาร</a></td>
-                                    </tr>
-                                    <tr align="center"bgcolor="#FFFFCC">
-                                        <td><a href="../cal_pro/cal_pro.php">ข้อมูลโปรโมชั่น</a></td>
-                                    </tr>
-                                    <tr align="center" bgcolor="#FFCC99">
-                                        <td>ข้อมูลการจัดส่งเบเกอรี่</td>
-                                    </tr>
-                                    <tr align="center" bgcolor="#FFFFCC">
-                                        <td>รายการสั่งซื้อ</td>
-                                    </tr>
-                                    <tr align="center" bgcolor="#FFCC99">
-                                        <td>ยกเลิกเบเกอรี่</td>
-                                    </tr>
-                                    <tr align="center" bgcolor="#FFFFCC">
-                                        <td>ยืนยันการชำระเงิน</td>
-                                    </tr>
-                                    <tr align="center" bgcolor="#FFCC99">
-                                        <td>เปลี่ยนสถานะ</td>
-                                    </tr>
-                                    <tr align="center" bgcolor="#FFFFCC">
-                                        <td><a href="../report/sale_report.php">ออกรายงาน</a></td>                       
-                                    </tr>
+                                       <td align="center" height="35" >จัดการข้อมูลต่างๆ</td>
+                    </tr>
+                    <tr align="center" bgcolor="#FFFFCC">
+                        <td bgcolor="#FFCC99"><a><span onclick="window.location = '../bk_owner/owner_form.php';" >ข้อมูลเจ้าของร้าน</span></a></td>
+                    </tr>
+                    <tr align="center" bgcolor="#FFFFCC">
+                        <td><a><span onclick="window.location = '../bk_owner/owner_form.php';" >ข้อมูลสมาชิก</span></a></td>
+                    </tr>
+                    <tr align="center" bgcolor="#FFCC99">
+                        <td bgcolor="#FFCC99"><a><span onclick="window.location = '../bk_group/group_form.php';" >ข้อมูลกลุ่มเบเกอรี่</span></a></td>
+                    </tr>
+                    <tr align="center" bgcolor="#FFFFCC">
+                        <td><a><span onclick="window.location = '../bk_type/type_form.php';" >ข้อมูลชนิดเบเกอรี่</span></a></td>
+                    </tr>
+                    <tr align="center" bgcolor="#FFCC99">
+                        <td><a><span onclick="window.location = '../bk_sp/sp_form.php';" >ข้อมูลขนาดและราคา</span></a></td>
+                    </tr>
+                    <tr align="center" bgcolor="#FFFFCC">
+                        <td><a><span onclick="window.location = '../bk_owner/owner_form.php';" >Admin</span></a></td>
+                    </tr>
+                    <tr align="center" bgcolor="#FFCC99">
+                        <td><a><span onclick="window.location = '../bk_owner/owner_form.php';" >ข้อมูลธนาคาร</span></a></td>
+                    </tr>
+                    <tr align="center" bgcolor="#FFFFCC">
+                        <td><a><span onclick="window.location = '../cal_pro/cal_pro.php';" >ข้อมูลโปรโมชั่น</span></a></td>
+                    </tr>
+                    <tr align="center" bgcolor="#FFCC99">
+                        <td><a><span onclick="window.location = '../bk_owner/owner_form.php';" >ข้อมูลการจัดส่งเบเกอรี่</span></a></td>
+                    </tr>
+                    <tr align="center" bgcolor="#FFFFCC">
+                        <td><a><span onclick="window.location = '../bk_owner/owner_form.php';" >รายการสั่งซื้อ</span></a></td>
+                    </tr>
+                    <tr align="center" bgcolor="#FFCC99">
+                        <td><a><span onclick="window.location = '../bk_owner/owner_form.php';" >ยกเลิกเบเกอรี่</span></a></td>
+                    </tr>
+                    <tr align="center" bgcolor="#FFFFCC">
+                        <td><a><span onclick="window.location = '../bk_owner/owner_form.php';" >ยืนยันการชำระเงิน</span></a></td>
+                    </tr>
+                    <tr align="center" bgcolor="#FFCC99">
+                        <td><a><span onclick="window.location = '../bk_owner/owner_form.php';" >เปลี่ยนสถานะ</span></a></td>
+                    </tr>
+                    <tr align="center" bgcolor="#FFFFCC">
+                        <td><a><span onclick="window.location = '../bk_owner/owner_form.php';" >ออกรายงาน</span></a></td>                        
+                    </tr></div>
                                 </table>
                                 <table width="200" border="0" align="center">
                                     <tr align="center" bgcolor="#FF3399">

@@ -1,14 +1,14 @@
-<?php
-include 'connect.php';
-session_start();
-if (isset($_SESSION["id_owner"])) {
-    $name = $_SESSION["user_owner"];
-} else {
+<?php 
+//include 'connect.php';
+//session_start();
+//if (isset($_SESSION["id_owner"])) {
+//    $name = $_SESSION["user_owner"];
+//} else {
     //$name = "guest";
-    echo "<script>alert('กรุณาเข้าสู่ระบบ')</script>";
-    header("location:../register/login_own.php");
+//    echo "<script>alert('กรุณาเข้าสู่ระบบ')</script>";
+//    header("location:../register/login_own.php");
     //$name = $_SESSION["user_owner"];
-}
+//}
 ?>
 <?php
 include 'connect.php';
@@ -48,7 +48,7 @@ include 'connect.php';
                 <tr align="center" bgcolor="#F26B5E">
                 <div class="menuleft">
                     <tr>
-                        <td width="218" height="40" align="center">ยินดีต้อนรับ <?php echo $name; ?></a></td>
+<!--                        <td width="218" height="40" align="center">ยินดีต้อนรับ <?php echo $name; ?></a></td>-->
                     </tr>
                     <tr>
                         <td width="218" height="40" align="center"><a href="../register/logout.php">Logout!!</a></td>

@@ -36,19 +36,18 @@
                             </tr>                             
                             <?php
                             include 'connect.php';
-                            $sql = "SELECT * FROM preorder_bakery, preorder_detail, bakery, size_price, bakery_type WHERE preorder_bakery.orderno=preorder_detail.orderno AND preorder_detail.id_bakery=bakery.id_bakery";
-                            $query = mysqli_query($conn,
-                                    $sql) or die($sql);
-                            $proResult = mysqli_fetch_array($query);
+                            $sql = "SELECT * FROM preorder_detail, preorder_bakery, bakery WHERE preorder_detail.orderno=preorder_bakery.orderno AND preorder_detail.id_bakery=bakery.id_bakery";
+                            $query = mysqli_query($conn, $sql) or die($sql);
+                            while ($proResult = mysqli_fetch_array($query)) {
                                 echo "<tr>";
                                 echo "<td align='center'>" . $proResult['orderno'] . "</td>";
                                 echo "<td align='center'>" . $proResult['datetime_pre'] . "</td>";
                                 echo "<td align='center'>" . $proResult['name_bakery'] . "</td>";
                                 echo "<td align='center'>" . $proResult['amount'] . "</td>";
-                                echo "<td align='center'>" . $proResult['amount'] . "</td>";
+                                echo "<td align='center'>" . $proResult['size'] . "</td>";
                                 echo "<td align='center'>" . $proResult['total'] . "</td>";
                                 echo"<td><center><a href ='comment.php?orderno=$proResult[orderno]'>Comment </a></center></td>"; //ลิงค์และส่งค่าเพื่อไปแก้ไขข้อมูล//
-                            
+                            }
                             ?>
                         </table><br></td></tr><br><br>
             </table><br>           

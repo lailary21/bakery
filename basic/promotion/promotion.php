@@ -1,7 +1,7 @@
 
 <html>
     <head>
-        <title>ข้อมูลโปรโมชั่น</title>
+        <title>ข้อมูลโปรโมชัน</title>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <link rel="stylesheet" href="css.css">
     </head>
@@ -12,11 +12,20 @@
                 event.returnValue = false;
             }
         }
+        function checkInp()
+        {
+            var checked = $("#promotiom input:checked").length > 0;
+            
+            if (!$('#promotion input[type="radio"]').is(':checked')) {
+                alert("กรุณาเลือกวันทำงานอย่างน้อย 1 วัน");
+                return false;
+            }
+        }
     </script>
     <style></style>
     <body>      
         <img class="logo-head" src="image/1.jpg"> 
-        <form action="insert.php" method="post">
+        <form name="promotion" action="insert.php" method="post" onsubmit="return checkInp()">
             <table class="menu-head">     
                 <tr align="center" valign="middle" bgcolor="#CCFFCC">
                     <td width="120" align="center">หน้าแรก</td>
@@ -55,7 +64,7 @@
                         <td><a><span onclick="window.location = '../bk_owner/owner_form.php';" >ข้อมูลธนาคาร</span></a></td>
                     </tr>
                     <tr align="center" bgcolor="#FFFFCC">
-                        <td><a><span onclick="window.location = '../bk_owner/owner_form.php';" >ข้อมูลโปรโมชั่น</span></a></td>
+                        <td><a><span onclick="window.location = '../bk_owner/owner_form.php';" >ข้อมูลโปรโมชัน</span></a></td>
                     </tr>
                     <tr align="center" bgcolor="#FFCC99">
                         <td><a><span onclick="window.location = '../bk_owner/owner_form.php';" >ข้อมูลการจัดส่งเบเกอรี่</span></a></td>
@@ -76,15 +85,15 @@
                         <td><a><span onclick="window.location = '../bk_owner/owner_form.php';" >ออกรายงาน</span></a></td>                        
                     </tr></div>
             </table>
-            <table width="1000" align="center" bgcolor="#FFFFCC">        <!--ตารางใหญ่-->
+            <table width="1000" align="center" bgcolor="#FFFFCC" border="0">        <!--ตารางใหญ่-->
                 <tr>
-                    <td><table width="500" border="0.5" align="center">
+                    <td><table width="500" border="0" align="center">
                             <tr>
-                                <td height="31" colspan="2">ข้อมูลโปรโมชั่น :</td>
+                                <td height="31" colspan="2">ข้อมูลโปรโมชัน :</td>
                             </tr>
                             <tr>
-                                <td align="right">ชื่อโปรโมชั่น :</td>
-                                <td><input type="text" id="pro_name" name="pro_name" onKeyUp="if(!(isNaN(this.value))) { alert('กรุณากรอกอักษร'); this.value='';}"/><a style="color: red"> *</a></td>
+                                <td align="right">ชื่อโปรโมชัน :</td>
+                                <td><input type="text" id="pro_name" name="pro_name"><a style="color: red"> *</a></td>
                             </tr>
                             <tr>
                                 <td align="right">รายละเอียด :</td>
@@ -108,7 +117,7 @@
                             </tr>
                             <tr>
                                 <td align="right">สถานะ :</td>
-                                <td><input type="radio" id="enable" name="status_pro"  value="1" /> ใช้งาน
+                                <td><input type="radio" id="enable" name="status_pro"  value="1" checked/> ใช้งาน
                                     <input type="radio" id="disable" name="status_pro"  value="2"/> ไม่ใช้งาน <a style="color: red">  *</a></td>
                             </tr>
                             <tr>
@@ -120,7 +129,7 @@
                         <table width="990" border="1" align="center">
                             <tr>
                                 <th width="79" align="center">รหัส</th>
-                                <th width="130" align="center">ชื่อโปรโมชั่น</th>
+                                <th width="130" align="center">ชื่อโปรโมชัน</th>
                                 <th width="170" align="center">รายละเอียด</th>
                                 <th width="85" align="center">วันที่</th>
                                 <th width="100" align="center">ราคาเริ่มต้น</th>

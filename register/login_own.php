@@ -1,63 +1,72 @@
 <html>
     <head>
-        <title>เข้าสู่ระบบ</title>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <link rel="stylesheet" href="regis.css"></link>
+        <title>Bakery Online Bhan Carawan</title>
     </head>
-    <style>
-        .logo-head{
-            position: static;
-            margin-top: -8px;
-            margin-left: -8px;
-            margin-right: -8px;
-            height: 160px;
-            width: 1366px;
-        }
-        body{
-            background-image: url(../image/b.jpg);
-        }
-    </style>
+
     <body>
-        <img class="logo-head" width="1340" src="../image/1.jpg"> 
-        <form id="form1" name="form1" method="post" action="login_ownservice.php">
-            <table width="1340" height="57" border="0" align="center">
-                <tr align="center" align="middle" bgcolor="#CCFFCC">
-                    <td width="171" align="center"><a href="../main/main.php">หน้าแรก</a></td>
-                    <td width="171" align="center">ติดต่อเรา</td>
-                    <td width="171" height="20" align="center">วิธีการสั่งซื้อ</td>
-                    <td width="171" align="center"><a href="../paymoney/payment.php">แจ้งชำระเงิน</a></td>
-                    <td width="171" align="center">เช็คสถานะ</td>
-                    <td width="171" align="center"><a href="../search/search_form.php">ค้นหา</a></td>
-                    <td width="171" align="center"><a href="../register/register_m.php">สมัครสมาชิก</a><br></td>
+        <img class="logo-head" src="../image/logo.jpg"></img>
+        <form id="form1" name="form1" method="post" action="../register/login_ownservice.php">
+            <table width="1000" align="center">
+                <tr align="center" bgcolor="#FFFF99">
+                    <td width="125" height="35"><strong>หน้าแรก</strong></td>
+                    <td width="125"><strong>วิธีสั่งซื้อ</strong></td>
+                    <td width="123"><strong>ยืนยันชำระเงิน</strong></td>
+                    <td width="121"><a href="../bk_check/check_form.php"><strong>เช็คสถานะ</strong></a></td>
+                    <td width="120"><strong>ค้นหา</strong></td>
+                    <td width="124"><strong>สมัครสมาชิก</strong></td>
+                    <td width="108"125"><strong>ติดต่อเรา</strong></td>
                 </tr>
             </table>
-            <table width="1300" height="200" border="0" align="center"> <!--ตารางใหญ่!-->
-                <tr>
-                    <td width="230">
-                           
-                        
-                    <td width="1000" >                              
-                        <table width="500" border="0" border="center" align="center" bgcolor="#FFFFCC">
-                            <tr>
-                                <td height="31" colspan="2" style="text-align: center;">เข้าสู่ระบบ</td>
-                            </tr>
-                            <tr>
-                                <td align="right">ชื่อผู้ใช้งาน : </td>
-                                <td><input type="text" id="user_owner" name="user_owner"></td>
-                            </tr>
-                            <tr>
-                                <td align="right">รหัสผ่าน : </td>
-                                <td><input type="password" id="passwd_owner" name="passwd_owner"></td>
-                            </tr>
-                            <tr>
-                                <td align="center" colspan="2"><input type="submit" id="bt1" name="submit"  value="submit"> 
-                                    <input type="reset" id="bt2" name="reset" value="ยกเลิก"> 
-                                </td>
+            <table width="1000" align="center">
+                <tr bgcolor="#FFFFCC">
+                    <td width="218" height="23"><br />
+                        <table width="200" align="center">
+                            <tr bgcolor="#CCFF99">
+                                <td width="15" height="57">เข้าสู่ระบบสำหรับเจ้าของร้าน<br />
+                                    <br />
+                                    ชื่อผู้ใช้งาน:
+                                    <label>
+                                        <input name="user_owner" type="text" id="user_owner" size="10" />
+                                        <br />
+                                        <br />
+                                        &nbsp;&nbsp;&nbsp;รหัสผ่าน :
+                                        <input name="passwd_owner" type="password" id="passwd_owner" size="10" />
+                                        <br />
+                                        <br />
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        <input type="submit" name="button" id="button" value="ตกลง" />
+                                        &nbsp;&nbsp;
+                                        <input type="reset" name="button2" id="button2" value="ยกเลิก" />
+                                        <br />
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label></td>
                             </tr>
                         </table>
-                    </td>
+                        <p><br />
+                        </p></td>
+                    <td width="770" align="center"><marquee behavior="scroll" ><h1>Welcome to Bhan Carawan</h1></marquee>
+                        <table width="649">
+                            <tr>
+                                <td height="176"><marquee direction="left" scrollamount="5"><img src="../image/bk1.jpg" width="200" height="150" /><img src="../image/bk2.jpg" width="200" height="150" /></marquee></td>
+                                <td><marquee direction="left" scrollamount="5"><img src="../image/bk2.jpg" width="200" height="150" /><img src="../image/bk3.jpg" width="200" height="150" /></marquee></td>
+                                <td><marquee direction="left" scrollamount="5"><img src="../image/bk3.jpg" width="200" height="150" /><img src="../image/bk1.jpg" width="200" height="150" /></marquee></td>
+                            </tr>
+                            <tr>
+                                <td><marquee direction="left" scrollamount="5"><img src="../image/bk5.jpg" width="200" height="150" /><img src="../image/IMG2.jpg" width="200" height="150" /></marquee></td>
+                                <td><marquee direction="left" scrollamount="5"><img src="../image/IMG2.jpg" width="200" height="150" /><img src="../image/IMG1.jpg" width="200" height="150" /></marquee></td>
+                                <td><marquee direction="left" scrollamount="5"><img src="../image/IMG1.jpg" width="200" height="150" /><img src="../image/bk5.jpg" width="200" height="150" /></marquee></td>
+                            </tr>
+                        </table>
+                        <p>&nbsp;</p>
+                        <p>&nbsp;</p>
+                        <p>&nbsp;</p>
+                        <p>&nbsp;</p></td>
                 </tr>
             </table>
-        </table>
-    </form>
-</body>
+            <p>&nbsp;</p>
+            <p><br>
+            </p>
+        </form>
+    </body>
 </html>
