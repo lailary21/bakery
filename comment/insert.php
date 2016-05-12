@@ -12,9 +12,20 @@ date_default_timezone_set('Asia/Bangkok');
 //$id_type = $_POST['preorder_detail'];
 //$com_text = $_POST['com_text'];
 
-$sql = "INSERT INTO `comment` (`id_order`, `orderno`, `id_bakery`, `id_sp`, `id_type`, `datetime_com`, `com_text`) VALUES ({$_POST['id_order']}, {$_POST['orderno']}, {$_POST['id_bakery']}, {$_POST['id_sp']}, {$_POST['id_type']}, now(), '{$_POST['com_text']}');";
-$conn->query($sql) or die($sql);
+$sql = "SELECT * FROM comment WHERE comment.id_order = {$_POST['id_order']}";
+$result = $conn->query($sql) or die($sql);
 
-echo "<script>alert('บันทึกสำเร็จ')</script>";
-echo "<meta http-equiv ='refresh'content='0;URL=show_comment.php'>";
-exit();
+if ($result->num_rows == 0) { // success
+  $sql = "INSERT INTO `comment` (`id_order`, `orderno`, `id_bakery`, `id_sp`, `id_type`, `datetime_com`, `com_text`) VALUES ({$_POST['id_order']}, {$_POST['orderno']}, {$_POST['id_bakery']}, {$_POST['id_sp']}, {$_POST['id_type']}, now(), '{$_POST['com_text']}');";
+  $conn->query($sql) or die($sql);
+
+  echo "<script>alert('บันทึกสำเร็จ')</script>";
+  echo "<meta http-equiv ='refresh'content='0;URL=show_comment.php'>";
+  exit();
+} else { // duplicate
+  echo "<script>alert('คอมเม้นมีข้อมูลอยู่แล้ว');</script>";
+  echo "<meta http-equiv ='refresh' content='0;URL=comment.php?orderno={$_POST['orderno']}'>";
+
+  //header("location: comment.php?orderno=" . $_POST['orderno']);
+  exit();
+}
