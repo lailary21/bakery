@@ -1,5 +1,8 @@
 <?php
 
+ob_start();
+session_start();
+
 $dbhost = "localhost";
 $dbusername = "root"; // ชื่อผู้ใช้งาน database หากทดสอบในเครื่องตัวเองให้ใช้ root
 $dbpassword = "";

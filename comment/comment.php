@@ -1,3 +1,7 @@
+<?php
+include 'connect.php';
+?>
+
 <html>
 <head>
   <title>Comment</title>
@@ -36,17 +40,24 @@
         <table width="700" border="0" align="center"><!--ตารางพรีออร์เดอร์-->
 
           <?php
-          include 'connect.php';
           $sql = "SELECT * FROM COMMENT, preorder_detail WHERE comment.orderno = preorder_detail.id_order";
           $query = mysqli_query($conn, $sql) or die($sql);
           while ($proResult = mysqli_fetch_array($query)) {
-            echo "<tr>";
-            echo "<td align='center'><a href='comment.php?orderno={$proResult['orderno']}'>" . $proResult['orderno'] . "</a></td>";
-            echo "<td align='center'>" . (isset($proResult['name_bakery']) ? $proResult['name_bakery'] : null) . "</td>";
-            echo "<td align='center'>" . $proResult['datetime_com'] . "</td>";
-            echo "<td align='center'>" . $proResult['com_text'] . "</td>";
-          }
-          ?>
+            ?>
+          <tr>
+            <td align="center">
+              <a href="comment.php?orderno=<?= $proResult['orderno'] ?>">
+                <?= $proResult['orderno'] ?>
+              </a>
+            </td>
+            <td align="center">
+              <?= (isset($proResult['name_bakery']) ? $proResult['name_bakery'] : null) ?>
+            </td>
+            <td align="center">
+              <?= $proResult['datetime_com']?>
+            </td>
+            <td align="center"><?= $proResult['com_text'] ?></td>
+          <?php } ?>
         </table>
         <br>
         <?php
