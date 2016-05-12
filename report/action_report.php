@@ -25,8 +25,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
   $end_date = $_POST['endDatePicker'];
 
   $html = "<html><head><title></title></head><body>";
-  $html .= "<h1>Training DOMPDF</h1>";
-  $html .= "</body></html>";
+  $html = "<h1>Training DOMPDF</h1>";
+  $html = "</body></html>";
 
   switch ($_POST['report']) {
     // ยอดขายเบเกอรี่
@@ -45,6 +45,10 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
   }
 
   $domPDF->loadHtml($html);
-  $domPDF->setPaper('A4', 'portrait');
+  $domPDF->setPaper('A4', '0', '');
   $domPDF->stream('report');
+  $domPDF->SetAutoFont();
+  $domPDF->SetDisplayMode('fullpage');
+  $domPDF->WriteHTML($html, 2);
+  $domPDF->Output();
 }
