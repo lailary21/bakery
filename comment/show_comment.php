@@ -27,6 +27,7 @@
                     <td>
                         <table width="700" border="1" align="center">           <!--ตารางพรีออร์เดอร์-->
                             <tr>
+<!--                                <th width="90" align="center">เลขที่ใบขาย</th>-->
                                 <th width="90" align="center">ชื่อเบเกอรี่</th>
                                 <th width="100" align="center">วัน/เวลา</th>
                                 <th width="330" align="center">คอมเม้น</th>
@@ -38,6 +39,7 @@
 
                             while ($proResult = mysqli_fetch_array($query)) {
                                 echo "<tr>";
+                                //echo "<td align='center'>" . $proResult['orderno'] . "</td>";
                                 echo "<td align='center'>" . $proResult['name_bakery'] . "</td>";
                                 echo "<td align='center'>" . $proResult['datetime_com'] . "</td>";
                                 echo "<td align='center'>" . $proResult['com_text'] . "</td>";
