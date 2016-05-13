@@ -1,5 +1,10 @@
 <?php
 include 'connect.php';
+
+if (isset($_GET['orderno']) && empty($_GET['orderno'])) {
+  header('location: comment_from.php');
+  exit();
+}
 ?>
 
 <html>
@@ -40,7 +45,8 @@ include 'connect.php';
         <table width="700" border="0" align="center"><!--ตารางพรีออร์เดอร์-->
 
           <?php
-          $sql = "SELECT * FROM COMMENT, preorder_detail WHERE comment.orderno = preorder_detail.id_order";
+          //$sql = "SELECT * FROM COMMENT, preorder_detail WHERE comment.orderno = preorder_detail.id_order";
+          $sql = "select * from comment where comment.orderno = {$_GET['orderno']}";
           $query = mysqli_query($conn, $sql) or die($sql);
           while ($proResult = mysqli_fetch_array($query)) {
             ?>
