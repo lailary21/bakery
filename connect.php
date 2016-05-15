@@ -1,5 +1,5 @@
 <?php   
-   $dbhost = "localhost";
+    $dbhost = "localhost";
     $dbusername = "root"; // ชื่อผู้ใช้งาน database หากทดสอบในเครื่องตัวเองให้ใช้ root 
     $dbpassword = "";
     $dbname = "bakery_online";
